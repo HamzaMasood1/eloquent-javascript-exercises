@@ -8,9 +8,8 @@ function filter(array, test) {
         }
 
     }
-    console.log("number of live languages: " + passed.length)
     return passed;
 }
 
 //console.log(filter(SCRIPTS, script => script.living));
-console.log(SCRIPTS.filter(s => s.direction = "ttb"));//top to bottom (ttb)
+//console.log(SCRIPTS.filter(s => s.direction = "ttb"));//top to bottom (ttb)
