@@ -1,5 +1,6 @@
 require("./filtering-arrays")
 require("./script-data-set/scripts")
+//applies a function to each element within the array and creates a new array.
 function map(array, transform) {
     let mapped = [];
     for (let element of array) {
