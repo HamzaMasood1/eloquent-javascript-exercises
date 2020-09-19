@@ -7,4 +7,4 @@ let killerRabbit = Object.create(protoRabbit);
 killerRabbit.type = "killer"
 killerRabbit.speak("SKREEEE");
 
-console.log(Object.getPrototypeOf(killerRabbit))
+console.log(Object.getPrototypeOf(killerRabbit) == Rabbit.prototype)
