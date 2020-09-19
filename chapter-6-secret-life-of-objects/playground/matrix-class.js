@@ -25,7 +25,7 @@ class Matrix {
     }
 }
 
-Matrix.prototype[Symbol.iterator] = function () {
+    Matrix.prototype[Symbol.iterator] = function () {
     return new MatrixIterator(this);
 };
 
@@ -61,3 +61,24 @@ for (let { x, y, value } of matrix) {
 // → 1 0 value 1,0
 // → 0 1 value 0,1
 // → 1 1 value 1,1
+
+
+class SymmetricMatrix extends Matrix {
+    constructor(size, element = (x, y) => undefined) {
+        super(size, size, (x, y) => {
+            if (x < y) return element(y, x);
+            else return element(x, y);
+        });
+    }
+
+    set(x, y, value) {
+        super.set(x, y, value);
+        if (x != y) {
+            super.set(y, x, value);
+        }
+    }
+}
+
+let symmMatrix = new SymmetricMatrix(5, (x, y) => `${x},${y}`);
+console.log(symmMatrix.get(2, 3));
+  // → 3,2
