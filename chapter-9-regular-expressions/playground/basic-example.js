@@ -73,5 +73,5 @@ let match = /\d+/.exec("one two 100 234234 6665 12312");
 console.log(match);
 // → ["100"]
 console.log(match.index);
-// → 8
+// -> 8 check if this value is correct
 
